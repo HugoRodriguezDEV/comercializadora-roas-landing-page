@@ -1,4 +1,4 @@
-import { ClipboardList, FileDown, ArrowRight, Store, UtensilsCrossed, Home, Leaf } from 'lucide-react';
+import { ClipboardList, Store, UtensilsCrossed, Home } from 'lucide-react';
 import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 export default function Hero() {
