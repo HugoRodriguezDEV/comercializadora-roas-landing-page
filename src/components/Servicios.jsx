@@ -1,4 +1,5 @@
 import { Zap, MapPin, MessageCircle, Ban } from 'lucide-react';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 const FEATURES = [
   {
@@ -24,6 +25,7 @@ const FEATURES = [
 ];
 
 export default function Servicios() {
+  const { sendMessage } = useWhatsAppMessage();
   return (
     <section id="servicios" className="bg-surface-container py-20">
       <div className="max-w-6xl mx-auto px-6">
@@ -41,7 +43,7 @@ export default function Servicios() {
               Con base en Colima, llegamos a toda la región con un servicio que combina la eficiencia de una empresa profesional con la calidez de un negocio familiar.
             </p>
             <a
-              href="https://wa.me/523121234567"
+              href={sendMessage()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

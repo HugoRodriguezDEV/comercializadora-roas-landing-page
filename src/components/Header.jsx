@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Search, Menu, X, MessageCircle } from 'lucide-react';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 const NAV_LINKS = [
   { label: 'Catálogo', href: '#catalogo' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Sobre ROAS', href: '#sobre-roas' },
-  { label: 'FAQ', href: '#faq' },
+  // { label: 'FAQ', href: '#faq' },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { sendMessage } = useWhatsAppMessage();
 
   return (
     <header className="sticky top-0 z-50 bg-surface/90 backdrop-blur-md">
@@ -42,7 +44,7 @@ export default function Header() {
             <Search className="w-5 h-5 text-on-surface-variant" />
           </button>
           <a
-            href="https://wa.me/523121234567"
+            href={sendMessage()}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-xs px-5 py-2.5"
@@ -78,7 +80,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://wa.me/523121234567"
+            href={sendMessage()}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary mt-2 justify-center"

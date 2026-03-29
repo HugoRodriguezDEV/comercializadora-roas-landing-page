@@ -1,4 +1,5 @@
 import { Share2, Camera, MessageCircle, MapPin, Clock, Banknote, CreditCard, Smartphone } from 'lucide-react';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 const EMPRESA = [
   { label: 'Sobre ROAS', href: '#sobre-roas' },
@@ -8,7 +9,7 @@ const EMPRESA = [
 ];
 
 const ATENCION = [
-  { label: 'Pedido por WhatsApp', href: 'https://wa.me/523121234567' },
+  { label: 'Pedido por WhatsApp' },
   { label: 'Catálogo PDF', href: '/catalogo.pdf' },
   { label: 'Punto de venta', href: '#ubicacion' },
 ];
@@ -16,7 +17,7 @@ const ATENCION = [
 const SOCIAL = [
   { label: 'Facebook', href: '#', Icon: Share2 },
   { label: 'Instagram', href: '#', Icon: Camera },
-  { label: 'WhatsApp', href: 'https://wa.me/523121234567', Icon: MessageCircle },
+  { label: 'WhatsApp', Icon: MessageCircle },
 ];
 
 const PAGOS = [
@@ -26,6 +27,7 @@ const PAGOS = [
 ];
 
 export default function Footer() {
+  const { sendMessage } = useWhatsAppMessage();
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface">
       <div className="max-w-6xl mx-auto px-6 py-14">
@@ -44,7 +46,7 @@ export default function Footer() {
               {SOCIAL.map(({ label, href, Icon }) => (
                 <a
                   key={label}
-                  href={href}
+                  href={sendMessage()}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
@@ -81,8 +83,8 @@ export default function Footer() {
               {ATENCION.map((item) => (
                 <li key={item.label}>
                   <a
-                    href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    href={sendMessage()}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="font-sans text-inverse-on-surface/60 text-sm hover:text-inverse-on-surface transition-colors"
                   >

@@ -1,4 +1,5 @@
 import { ShoppingCart, Package, Wheat, Sparkles, ArrowRight } from 'lucide-react';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 const CATEGORIAS = [
   {
@@ -40,6 +41,7 @@ const CATEGORIAS = [
 ];
 
 export default function Especialidades() {
+  const { createMessage } = useWhatsAppMessage();
   return (
     <section id="catalogo" className="bg-surface py-20">
       <div className="max-w-6xl mx-auto px-6">
@@ -79,8 +81,14 @@ export default function Especialidades() {
                   {description}
                 </p>
               </div>
-              <button className="mt-auto flex items-center gap-2 text-xs font-sans font-semibold text-primary group-hover:gap-3 transition-all duration-200">
+              {/* <button className="mt-auto flex items-center gap-2 text-xs font-sans font-semibold text-primary group-hover:gap-3 transition-all duration-200">
                 Ver productos
+                <ArrowRight className="w-4 h-4" />
+              </button> */}
+              <button
+                onClick={() => createMessage(`Hola, me interesa conocer sus productos de ${title}`)}
+                className="mt-auto flex items-center gap-2 text-xs font-sans font-semibold text-primary group-hover:gap-3 transition-all duration-200">
+                Pregunta por
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

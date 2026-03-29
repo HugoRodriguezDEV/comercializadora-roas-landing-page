@@ -1,6 +1,8 @@
 import { ClipboardList, FileDown, ArrowRight, Store, UtensilsCrossed, Home, Leaf } from 'lucide-react';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 
 export default function Hero() {
+  const { sendMessage } = useWhatsAppMessage();
   return (
     <section className="bg-surface min-h-[90vh] flex items-center overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
@@ -33,11 +35,15 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-3 pt-2">
-            <a href="#catalogo" className="btn-primary">
+            {/* <a href="#catalogo" className="btn-primary">
               <ClipboardList className="w-4 h-4" />
               Ver ofertas de la semana
+            </a> */}
+            <a href={sendMessage()} className="btn-primary">
+              <ClipboardList className="w-4 h-4" />
+              Contactanos
             </a>
-            <a
+            {/* <a
               href="/catalogo.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -45,7 +51,7 @@ export default function Hero() {
             >
               <FileDown className="w-4 h-4" />
               Catálogo PDF
-            </a>
+            </a> */}
           </div>
 
           {/* Social proof */}
