@@ -32,4 +32,13 @@
   .btn-secondary:hover {
     transform: scale(1.02);
   }
+
+  .btn-warm {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-sans font-semibold text-white text-sm transition-all duration-200;
+    background: #D97706;
+  }
+  .btn-warm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
+  }
 }

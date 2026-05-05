@@ -36,6 +36,9 @@ module.exports = {
         error: '#ba1a1a',
         'error-container': '#ffdad6',
         background: '#fcf9f5',
+        amber: '#D97706',
+        'amber-light': '#FEF3C7',
+        'on-amber-light': '#78350F',
       },
       fontFamily: {
         sans: ['"Be Vietnam Pro"', 'sans-serif'],
