@@ -20,15 +20,15 @@ const VALORES = [
 
 export default function ValorROAS() {
   return (
-    <section id="sobre-roas" className="bg-surface-container-low py-20">
+    <section id="sobre-roas" className="bg-amber-light py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-sans font-semibold mb-4">
+          <span className="inline-block bg-primary text-on-primary px-4 py-1.5 rounded-full text-xs font-sans font-bold mb-4">
             Nuestra Filosofía
           </span>
           <h2 className="font-headline font-bold text-on-surface text-4xl md:text-5xl">
-            El Valor <span className="text-primary-container">ROAS</span>
+            El Valor <span className="text-primary">ROAS</span>
           </h2>
           <p className="font-sans text-on-surface-variant text-base mt-4 max-w-xl mx-auto leading-relaxed">
             Desde 2012, la familia Rodríguez-Ascencio trabaja para ser el aliado estratégico del comercio colimense.
@@ -40,10 +40,10 @@ export default function ValorROAS() {
           {VALORES.map(({ Icon, title, description }) => (
             <div
               key={title}
-              className="bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-4 shadow-ambient hover:shadow-lg transition-shadow duration-300"
+              className="bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-4 shadow-ambient hover:shadow-lg transition-shadow duration-300 border-l-4 border-primary"
             >
-              <div className="w-14 h-14 rounded-xl bg-secondary-container flex items-center justify-center">
-                <Icon className="w-7 h-7 text-on-secondary-container" />
+              <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center">
+                <Icon className="w-7 h-7 text-on-primary" />
               </div>
               <h3 className="font-headline font-bold text-on-surface text-xl">
                 {title}

@@ -27,26 +27,26 @@ const FEATURES = [
 export default function Servicios() {
   const { sendMessage } = useWhatsAppMessage();
   return (
-    <section id="servicios" className="bg-surface-container py-20">
+    <section id="servicios" className="bg-primary py-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left: text */}
           <div>
-            <span className="inline-block bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-sans font-semibold mb-6">
+            <span className="inline-block bg-amber-light text-on-amber-light px-4 py-1.5 rounded-full text-xs font-sans font-bold mb-6">
               Cómo trabajamos
             </span>
-            <h2 className="font-headline font-bold text-on-surface text-4xl md:text-5xl leading-tight mb-4">
+            <h2 className="font-headline font-bold text-white text-4xl md:text-5xl leading-tight mb-4">
               Presencia local,<br />
-              <span className="text-primary-container">alcance regional</span>
+              <span className="text-amber-light">alcance regional</span>
             </h2>
-            <p className="font-sans text-on-surface-variant text-base leading-relaxed mb-8 max-w-md">
+            <p className="font-sans text-white/70 text-base leading-relaxed mb-8 max-w-md">
               Con base en Colima, llegamos a toda la región con un servicio que combina la eficiencia de una empresa profesional con la calidez de un negocio familiar.
             </p>
             <a
               href={sendMessage()}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-warm"
             >
               <MessageCircle className="w-4 h-4" />
               Hacer un pedido
@@ -60,8 +60,8 @@ export default function Servicios() {
                 key={title}
                 className="bg-surface-container-lowest rounded-2xl p-5 flex flex-col gap-3 shadow-ambient"
               >
-                <div className="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-on-secondary-container" />
+                <div className="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-on-primary-container" />
                 </div>
                 <h3 className="font-headline font-bold text-on-surface text-sm leading-tight">
                   {title}

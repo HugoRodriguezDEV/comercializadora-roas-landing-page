@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import ValorROAS from './components/ValorROAS';
 import Especialidades from './components/Especialidades';
 import Servicios from './components/Servicios';
+import Ubicacion from './components/Ubicacion';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <ValorROAS />
         <Especialidades />
         <Servicios />
+        <Ubicacion />
       </main>
       <Footer />
     </div>
